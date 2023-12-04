@@ -24,6 +24,10 @@ class QuestionViewModel @Inject constructor(
         getAllQuestions()
     }
 
+    fun getTotalQuestionCount(): Int {
+        return data.value.data?.toMutableList()?.size!!
+    }
+
     private fun getAllQuestions(){
         viewModelScope.launch {
             data.value.loading = true
